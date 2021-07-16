@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+
+.icon {
+    color: white;
+    font-size: 100px;
+}
