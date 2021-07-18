@@ -6,5 +6,47 @@ body {
 
 .icon {
     color: white;
-    font-size: 100px;
+    font-size: 70px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap : 15px;
+}
+
+.box {
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.headline {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    margin-top: 30px;
+}
+
+.turn {
+    color: white;
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: black;
+    border-color: white;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.winMes {
+    color: white;
+    margin-top: -40px;
 }

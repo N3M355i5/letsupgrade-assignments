@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import "./style.css"
+import NavBar from "./Components/Navbar"
+import HeroSection from "./Components/HeroSection"
+import FeatureSection from "./Components/FeatureSection"
+import CardSection from "./Components/CardSection"
+import FooterSection from "./Components/FooterSection"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div>
+            <NavBar/>
+            <HeroSection/>
+            <FeatureSection/>
+            {/* <CardSection/> */}
+            <FooterSection/>
+        </div>
+    )
 }
 
-export default App;
+export default App
