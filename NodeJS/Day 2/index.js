@@ -29,12 +29,28 @@ const pokeModel = new mongoose.model('pokemons', pokeSchema);
 //     });
 // }
 
-app.get("/getdata", (req, res) => {
+app.get("/pokemon", (req, res) => {
     pokeModel.find((err, data) => {
         if(err==null) {
-            console.log(data)
+            //console.log(data);
+            res.send(data);
         }
     })
+})
+
+//create a new pokemons
+app.post("/pokemon", (req, res) => {
+    let pokemon = req.body;
+    let pokeObj = new pokeModel(pokemon);
+    pokeObj.save((err, data) => {
+        if(err == null) {
+            res.send("Pokemon Created");
+        }
+    });
+})
+
+app.post("/pokedel", (req, res) => {
+    
 })
 
 //getData();
