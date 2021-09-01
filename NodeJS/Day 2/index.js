@@ -49,8 +49,36 @@ app.post("/pokemon", (req, res) => {
     });
 })
 
-app.post("/pokedel", (req, res) => {
+//delete pokemon
+app.delete("/pokemon/:name", (req, res) => {
+    let name = req.params.name;
+    pokeModel.deleteOne({name:name}, (err, data) =>{
+        if(err==null) {
+            res.send({message: "Pokemon Deleted -" + name});
+        }
+    })
     
+})
+
+//fetch single pokemons
+app.get("/pokemon/:name", (req, res) => {
+    let name = req.params.name;
+    pokeModel.find({name:name}, (err, data) =>{
+        if(err == null) {
+            res.send(data);
+        }
+    })
+})
+
+//update a pokemon 
+app.put("/pokemon/:name", (req, res) => {
+    let name = req.params.name;
+    let pokemon = req.body;
+    pokeModel.updateOne({name:name}, pokemon, (err, data) => {
+        if(err == null) {
+            res.send("Pokemon Updated - "+name);
+        }
+    });
 })
 
 //getData();
